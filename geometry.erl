@@ -4,15 +4,13 @@
 -export([area_case/1]).
 
 area({rectangle, _, _} = Arg) ->
-  io:format("~p~n", [Arg]),
   {_, Width, Height} = Arg,
   {ok, Width * Height};
 area({square, Side}) when is_integer(Side) ->
   {ok, Side * Side};
 area({triangle, Width, Height}) when Width < Height ->
   {ok, (Width * Height)/2};
-area(Error) ->
-  io:format("Error arg ~p~n", [Error]),
+area(_Error) ->
   {error, badarg}.
 
 area(_A, _B) -> ok.
