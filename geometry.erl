@@ -36,3 +36,4 @@ area_case(Arg) ->
 
 
 f1(Result) -> Result.
+
