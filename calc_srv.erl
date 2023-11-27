@@ -4,7 +4,7 @@
 -behavior(gen_server).
 
 %% API
--export([start_link/1, stop/1]).
+-export([start/1, stop/1]).
 -export([print_state/1, add_one/2, add_two/2]).
 
 %% Callbacks
@@ -18,8 +18,8 @@
 
 %% API
 
-start_link(Name) ->
-  gen_server:start_link({local, Name}, ?MODULE, [], []).
+start(Name) ->
+  gen_server:start({local, Name}, ?MODULE, [], []).
 
 stop(Name) ->
   gen_server:stop(Name).
